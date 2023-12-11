@@ -4,9 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Analizador de texto</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <script src="index.js" type="module"></script>
+  <header>
+    <h1>Analizador de Texto</h1>
+  </header>
+<div>
+  <textarea name="user-input" placeholder="Digite seu texto aqui.. " oninput="analyzeText()"></textarea>
+
+  <ul>
+    <li>Contagem de Palavras: 0</li>
+    <li> Contagem de Caracteres: 0</li>
+    <li>Contagem Sem Espaços/Pontuações: 0</li>
+    <li>Contagem de Números: 0</li>
+    <li>Soma Total dos Números: 0</li>
+    <li>Comprimento Médio das Palavras: 0</li>
+    </ul>
+
+    <button id="reset" onclick="clearText()">Limpar</button>
+
+    <footer>Desenvolvido por Carolina Salles ©</footer>
+</div>
+ <script src="index.js" type="module"></script>
 </body>
 </html>
