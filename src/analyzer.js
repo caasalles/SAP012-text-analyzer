@@ -1,27 +1,21 @@
-const analyzer = {
+const analyzer = {  
   getWordCount: (text) => {
-    const words = text.trim().split(/\s+/).filter(Boolean);
-    return words.length;
+    //TODO: esta función debe retornar el recuento de palabras que se encuentran en el parámetro `text` de tipo `string`.
   },
   getCharacterCount: (text) => {
-    return text.length;
+    //TODO: esta función debe retornar el recuento de caracteres que se encuentran en el parámetro `text` de tipo `string`.
   },
   getCharacterCountExcludingSpaces: (text) => {
-    const cleanText = text.replace(/[^\w\s]/g, '').replace(/\s+/g, '');
-    return cleanText.length;
+    //TODO: esta función debe retornar el recuento de caracteres excluyendo espacios y signos de puntuación que se encuentran en el parámetro `text` de tipo `string`.
   },
-  getAverageWordLength: (text) => {
-    const words = text.trim().split(/\s+/).filter(Boolean);
-    const totalWordLength = words.reduce((acc, word) => acc + word.length, 0);
-    return words.length > 0 ? totalWordLength / words.length : 0;
+  getAverageWordLength: (text) => {    
+    //TODO: esta función debe retornar la longitud media de palabras que se encuentran en el parámetro `text` de tipo `string`.
   },
   getNumberCount: (text) => {
-    const numbers = text.match(/\d+/g);
-    return numbers ? numbers.length : 0;
+    //TODO: esta función debe retornar cúantos números se encuentran en el parámetro `text` de tipo `string`.
   },
   getNumberSum: (text) => {
-    const numbers = text.match(/\d+/g);
-    return numbers ? numbers.reduce((acc, num) => acc + parseInt(num), 0) : 0;
+    //TODO: esta función debe retornar la suma de todos los números que se encuentran en el parámetro `text` de tipo `string`.
   },
 };
 
