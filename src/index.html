@@ -7,25 +7,26 @@
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+<div class="container">
   <header>
     <h1>Analizador de Texto</h1>
   </header>
 <div>
-  <textarea name="user-input" placeholder="Digite seu texto aqui.. " oninput="analyzeText()"></textarea>
+  <textarea name="user-input" placeholder="Digite seu texto aqui.. " cols="55" rows="5" oninput="analyzerText()"></textarea>
 
   <ul>
-    <li data-testid="word-count">Contagem de Palavras: 0</li>
-    <li data-testid="character-count"> Contagem de Caracteres: 0</li>
-    <li data-testid="character-no-spaces-count">Contagem Sem Espaços/Pontuações: 0</li>
-    <li data-testid="number-count">Contagem de Números: 0</li>
-    <li data-testid="number-sum">Soma Total dos Números: 0</li>
-    <li data-testid="word-length-average">Comprimento Médio das Palavras: 0</li>
+    <li class="i1" data-testid="character-count"> Contagem de Caracteres: 0</li>
+    <li class="i2"data-testid="character-no-spaces-count">Contagem Sem Espaços/Pontuações: 0</li>
+    <li class="i3" data-testid="number-count">Contagem de Números: 0</li>
+    <li class="i4" data-testid="number-sum">Soma Total dos Números: 0</li>
+    <li class="i5" data-testid="word-length-average">Comprimento Médio das Palavras: 0</li>
     </ul>    
 </div>
 <button id="reset" onclick="clearText()">Limpar</button>
+</div>
 <footer>
   <p>Desenvolvido por Carolina Salles ©</p>
 </footer>
- <script src="index.js" type="module"></script>
+<script src="index.js" type="module"></script>
 </body>
 </html>
