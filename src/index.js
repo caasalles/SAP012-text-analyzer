@@ -8,12 +8,12 @@ let metricas = (text) => {
     const numberSum = analyzer.getNumberSum(text);
     const characterCountExcludingSpaces = analyzer.getCharacterCountExcludingSpaces(text);
 
-    document.querySelector('[data-testid="word-count"]').innerText = `Contagem de Palavras: ${wordCount}`;
-    document.querySelector('[data-testid="character-count"]').innerText = `Contagem de Caracteres: ${characterCount}`;
-    document.querySelector('[data-testid="character-no-spaces-count"]').innerText = `Contagem Sem Espaços/Pontuações: ${characterCountExcludingSpaces}`;
-    document.querySelector('[data-testid="number-count"]').innerText = `Contagem de Números: ${numberCount}`;
-    document.querySelector('[data-testid="number-sum"]').innerText = `Soma Total dos Números: ${numberSum}`;
-    document.querySelector('[data-testid="word-length-average"]').innerText = `Comprimento Médio das Palavras: ${averageWordLength.toFixed(2)}`;
+    document.querySelector('[data-testid="word-count"]').textContent = `Contagem de Palavras: ${wordCount}`;
+    document.querySelector('[data-testid="character-count"]').textContent = `Contagem de Caracteres: ${characterCount}`;
+    document.querySelector('[data-testid="character-no-spaces-count"]').textContent = `Contagem Sem Espaços/Pontuações: ${characterCountExcludingSpaces}`;
+    document.querySelector('[data-testid="number-count"]').textContent = `Contagem de Números: ${numberCount}`;
+    document.querySelector('[data-testid="number-sum"]').textContent = `Soma Total dos Números: ${numberSum}`;
+    document.querySelector('[data-testid="word-length-average"]').textContent = `Comprimento Médio das Palavras: ${averageWordLength.toFixed(2)}`;
 };
 
 let textarea = document.querySelector('textarea[name="user-input"]');
