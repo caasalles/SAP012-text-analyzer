@@ -19,18 +19,18 @@ const analyzer = {
   getAverageWordLength: (text) => {
     const words = text.trim().split(/\s+/).filter(Boolean);
     if(words.length === 0) {
-    return 0;
+      return 0;
     }
     const totalWordLength = words.reduce((acc, word) => acc + word.length, 0);
     return totalWordLength / words.length
   },
   getNumberCount: (text) => {
-    const numbers = text.match(/\d+/g);
-    return numbers ? numbers.length : 0;
+    const numbers = text.match(/[-+]?\d*\.?\d+/g);
+    return numbers ? numbers.filter(num => !isNaN(parseFloat(num))).length : 0;
   },
   getNumberSum: (text) => {
-    const numbers = text.match(/\d+/g);
-    return numbers ? numbers.reduce((acc, num) => acc + parseInt(num), 0) : 0;
+    const numbers = text.match(/[-+]?\d*\.?\d+/g);
+    return numbers ? numbers.reduce((acc, num) => acc + (isNaN(parseFloat(num)) ? 0 : parseFloat(num)), 0) : 0;
   },
 };
 
