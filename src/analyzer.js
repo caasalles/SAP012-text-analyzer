@@ -1,10 +1,12 @@
-const analyzer = {
+const analyzer = {  
   getWordCount: (text) => {
-    const words = text.trim().split(/\s+/).filter(Boolean);
+    const words = text.split(' ');
     return words.length;
+    
   },
   getCharacterCount: (text) => {
     return text.length;
+
   },
   getCharacterCountExcludingSpaces: (text) => {
     const cleanText = text.replace(/[^\w\s]/g, '').replace(/\s+/g, '');
@@ -14,23 +16,38 @@ const analyzer = {
         noSpaceCount++;
       }
     }
-    return cleanText.length;
+    return noSpaceCount;
   },
-  getAverageWordLength: (text) => {
-    const words = text.trim().split(/\s+/).filter(Boolean);
-    if(words.length === 0) {
-      return 0;
+  getAverageWordLength: (text) => {    
+    const words = text.split(' ');
+    let totalWordLength = 0;
+    for (let i = 0; i < words.length; i++) {
+      totalWordLength += words[i].length;
     }
-    const totalWordLength = words.reduce((acc, word) => acc + word.length, 0);
-    return totalWordLength / words.length
+    const result = (totalWordLength / words.length).toFixed(2);
+
+    return Number(result);
   },
   getNumberCount: (text) => {
-    const numbers = text.match(/[-+]?\d*\.?\d+/g);
-    return numbers ? numbers.filter(num => !isNaN(parseFloat(num))).length : 0;
+    const numbers = text.match(/\b\d+(\.\d+)?\b/g);
+    if(numbers){
+      
+      return numbers.length; 
+    } else {
+      return 0;
+    }
   },
   getNumberSum: (text) => {
-    const numbers = text.match(/[-+]?\d*\.?\d+/g);
-    return numbers ? numbers.reduce((acc, num) => acc + (isNaN(parseFloat(num)) ? 0 : parseFloat(num)), 0) : 0;
+    const numbers = text.match(/\b\d+(\.\d+)?\b/g);
+    if(numbers){
+      let sum = 0; 
+      for(let i = 0; i < numbers.length; i++){
+        sum += Number(numbers[i]);
+      }
+      return sum; 
+    } else {
+      return 0;
+    }
   },
 };
 
